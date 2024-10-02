@@ -1,5 +1,7 @@
 package org.example.entity;
 
+import java.util.Objects;
+
 public class Employee {
      private int id;
     private String firstname;
@@ -26,15 +28,14 @@ public class Employee {
 
 
     @Override
-    public int hashCode() {
-        return Integer.hashCode(id);
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Employee employee)) return false;
+        return id == employee.id;
     }
 
     @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (!(obj instanceof Employee)) return false;
-        Employee other = (Employee) obj;
-        return this.id == other.id;
+    public int hashCode() {
+        return Objects.hashCode(id);
     }
 }
