@@ -2,26 +2,38 @@ package org.example.entity;
 
 public class Employee {
      private int id;
-     private String firstName;
-     private  String lastName;
+     private String firstname;
+     private  String lastname;
 
     public int getId() {
         return id;
     }
 
     public String getLastName() {
-        return lastName;
+        return lastname;
     }
 
     public String getFirstname() {
-        return firstName;
+        return firstname;
     }
 
     public Employee(int id, String lastName, String firstName) {
         this.id = id;
-        this.lastName = lastName;
-        this.firstName = firstName;
+        this.lastname = lastName;
+        this.firstname = firstName;
     }
 
 
+    @Override
+    public int hashCode() {
+        return Integer.hashCode(id);
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (!(obj instanceof Employee)) return false;
+        Employee other = (Employee) obj;
+        return this.id == other.id;
+    }
 }

@@ -30,6 +30,10 @@ public class Main {
 
         for(Object emp : copie){
 
+            if(emp == null){
+                break;
+            }
+
             if (!unique.contains(emp)){
                 unique.add(emp);
             } else{
@@ -51,6 +55,9 @@ public class Main {
 
 
         for (Object emp : copie) {
+            if(emp == null){
+                break;
+            }
             toMakeUnique.add((Employee) emp);
         }
 
@@ -68,21 +75,22 @@ public class Main {
 
 
 
+    public static List<Employee> removeDuplicates(List<Employee> input){
+        List<Employee> uniqueRecords = new LinkedList<>();
 
+       for(Employee emp : input){
+           if(emp == null){
+               break;
+           }
+           if(!uniqueRecords.contains(emp)){
+               uniqueRecords.add(emp);
+           } else{
+               uniqueRecords.remove(emp);
+           }
+       }
+       return uniqueRecords;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+}
 
 
 }

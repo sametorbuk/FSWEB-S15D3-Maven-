@@ -8,7 +8,7 @@ public class WordCounter {
 
 
 
-    String text ="When the offensive resumed, " +
+   private static String text ="When the offensive resumed, " +
             "the Turks received their first victory when the Greeks encountered " +
             "stiff resistance in the battles of First and Second İnönü," + " due " +
             "to İsmet Pasha's organization of an irregular militia into a regular " +
@@ -31,8 +31,9 @@ public class WordCounter {
 
 
 
-    public static Map calculatedWord(String input){
-        String noPunctuation = input.replaceAll("[^a-zA-Z0-9\\s]", "");
+
+    public static Map calculatedWord(){
+        String noPunctuation = text.replaceAll("[^a-zA-Z0-9\\s]", "").toLowerCase();
         String[] strArray = noPunctuation.split(" ");
         Map<String , Integer> result = new HashMap<>();
 
