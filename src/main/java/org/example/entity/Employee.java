@@ -2,8 +2,9 @@ package org.example.entity;
 
 public class Employee {
      private int id;
-     private String firstname;
+    private String firstname;
      private  String lastname;
+
 
     public int getId() {
         return id;
@@ -17,10 +18,10 @@ public class Employee {
         return firstname;
     }
 
-    public Employee(int id, String lastName, String firstName) {
+    public Employee(int id, String firstname, String lastName) {
         this.id = id;
         this.lastname = lastName;
-        this.firstname = firstName;
+        this.firstname = firstname;
     }
 
 
